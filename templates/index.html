@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/animate.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/superslides.css')}}">
+
+	<title>PREDICTION DE BIABETE</title>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<H1> Niveau de diabète</H1>
+
+				<div class="form-group" style="width: 700px">
+					<img src="{{url_for('static',filename='home.jpg')}}" alt="Photo glass">
+				</div>
+				<form action="{{url_for('predict')}}" method="POST" id="contactForm">
+					<div class="col-lg-12">
+						<div class="form-group">
+							<input type="number" name="Pregnancies" id="Pregnancies" class="form-control">	
+						</div>
+
+						<div class="form-group">
+							<input type="number" name="Glucose" id="Glucose" class="form-control">	
+						</div>
+
+						<div class="form-group">
+							<input type="number" name="BloodPressure" id="BloodPressure" class="form-control">	
+						</div>
+
+						<div class="form-group">
+							<input type="number" name="SkinThickness" id="SkinThickness" class="form-control">	
+						</div>
+
+						<div class="form-group">
+							<input type="number" name="Insulin" id="Insulin" class="form-control">	
+						</div>
+
+						<div class="form-group">
+							<input type="number" name="BMI" id="BMI" class="form-control">	
+						</div>
+
+						<div class="form-group">
+							<input type="number" name="DiabetesPedigreeFunction" id="DiabetesPedigreeFunction" class="form-control">	
+						</div>
+
+						<div class="form-group">
+							<input type="number" name="Age" id="Age" class="form-control">	
+						</div>
+
+						<h3> {{prediction_text_}}</h3>
+
+						<div class="submit-button">
+							<button id="submit" type="submit">Predire</button>
+							
+						</div>
+						
+					</div>
+					
+				</form>
+				
+			</div>
+			
+		</div>
+		
+	</div>
+
+</body>
+</html>
